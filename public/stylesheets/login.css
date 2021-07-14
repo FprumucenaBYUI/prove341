@@ -1,0 +1,13 @@
+.user-message--error {
+    border-color: red;
+    background: rgb(255, 176, 176);
+    color: red;
+}
+
+.user-message {
+    width: 30rem;
+}
+
+.page-reset-form {
+    padding: 4.5%;
+}

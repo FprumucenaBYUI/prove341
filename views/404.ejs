@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head') %>
+</head>
+
+<body>
+    <div class="page-holder">
+        <!-- navbar-->
+        <header class="header bg-white">
+            <div class="container px-0 px-lg-3">
+                <%- include ('includes/nav-shop') %>
+            </div>
+        </header>
+        <div class="container">
+            <!-- HERO SECTION-->
+            <section class="py-5 bg-light">
+                <div class="container">
+                    <div class="row px-4 px-lg-5 py-lg-4 align-items-center"></div>
+                </div>
+            </section>
+        </div>
+
+        <div class="masthead bg-primary text-white text-center page-content">
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-0">
+                    <%= pageTitle %>
+                </h1>
+                <h3>The page you were looking for at "
+                    <%= path %>" does not exist.</h3>
+            </div>
+        </div>
+    </div>
+    <%- include('includes/footer')  %>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<% if (products.length > 0) { %>
+    <% products.forEach(p => { %>
+        <tr>
+            <th class="pl-0 border-0" scope="row">
+                <div class="media align-items-center">
+                    <a class="reset-anchor d-block animsition-link" href="/products/<%= p.product._id%>"><img src="<%= p.product.imageUrl %>" alt="..." width="70" /></a>
+                    <div class="media-body ml-3"><strong class="h6"><a class="reset-anchor animsition-link" href="/products/<%= p.product._id%>"><%= p.title %></a></strong></div>
+                </div>
+            </th>
+            <td class="align-middle border-0">
+                <p class="mb-0 small">$
+                    <%= p.product.price %>
+                </p>
+            </td>
+            <td class="align-middle border-0">
+                <div class="border d-flex align-items-center justify-content-between px-3"><span class="small text-uppercase text-gray headings-font-family">Quantity</span>
+                    <div class="quantity">
+                        <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
+                        <input class="form-control form-control-sm border-0 shadow-0 p-0" type="text" value="<%= p.quantity %>" />
+                        <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
+                    </div>
+                </div>
+            </td>
+
+            <td class="align-middle border-0">
+                <form action="/cart-delete-item" method="post">
+                    <input type="hidden" name="productId" value="<%= p.product._id %>">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button class="mb-0 small fas fa-trash-alt small text-muted" type="submit"></button>
+                </form>
+            </td>
+        </tr>
+        <% }) %>
+            <% } else { %>
+                <tr>
+                    <th class="pl-0 border-0" scope="row">
+                        <div class="media align-items-center">
+                            <h4>No Products in Cart!</h4>
+                        </div>
+                    </th>
+                </tr>
+                <% } %>

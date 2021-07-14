@@ -1,0 +1,35 @@
+<!-- PRODUCT-->
+<% if(Array.isArray(prods) && prods.length > 0) { %>
+    <% for(let product of prods) { %>
+        <div class="col-lg-4 col-sm-6">
+            <div class="product text-center">
+                <div class="mb-3 position-relative">
+                    <div class="badge text-white badge-"></div>
+                    <a class="d-block" href="/product-detail/<%= product._id%>"><img class="img-fluid w-100" src= "../<%= product.imageUrl %>" alt="..."></a>
+                    <div class="product-overlay">
+                        <ul class="mb-0 list-inline">
+                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="/admin/edit-product/<%= product._id%>?edit=true">Edit</a></li>
+                            <li class="list-inline-item m-0 p-0">
+                                <!-- <a class="btn btn-sm btn-dark" href="/admin/delete-product/<%= //product._id%>">Delete</a> -->
+                                <form action="/admin/delete-product" method="POST">
+                                    <input type="hidden" value="<%= product._id %>" name="productId">
+                                    <button class="btn btn-sm btn-dark" type="submit">Delete</button>
+                                </form>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h6>
+                    <a class="reset-anchor" href="/product-detail/<%= product._id%>">
+                        <%= product.title %>
+                    </a>
+                </h6>
+                <p class="small text-muted">
+                    $
+                    <%= product.price %>.00
+                </p>
+            </div>
+        </div>
+        <% } %>
+            <% } %>

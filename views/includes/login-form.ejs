@@ -1,0 +1,43 @@
+<div class="card mb-4" id="forms">
+    <div class="card-body">
+        <form action="/login" method="POST">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+
+                    </div>
+                    <div class="text-center">
+                        <% if (errorMessage) { %>
+                            <div class="user-message user-message--error">
+                                <%= errorMessage %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            <label data-error="wrong" data-success="right" for="email">Your email</label>
+                            <input type="email" name="email" class="form-control validate" value="<%= oldInput.email%>" required>
+                        </div>
+
+                        <div class="md-form mb-4">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <label data-error="wrong" data-success="right" for="password">Your password</label>
+                            <input type="password" name="password" class="form-control validate" value="<%= oldInput.password %>" required>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <a href="/reset">Reset Password</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
