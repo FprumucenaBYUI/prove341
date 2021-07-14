@@ -16,10 +16,10 @@ const renderIndex = (req, res, json) => {
     // let totalProducts = filteredData.length * 1;
     // console.log(ITEMS_PER_PAGE * page);
     // console.log("SEARCHED VALUE = [" + searchedValue + "]");
-    console.log("CURRENT PAGE = [" + page + "]");
-    console.log("LAST PAGE = [" + Math.ceil(filteredData.length / ITEMS_PER_PAGE) + "]");
-    let nextP = page + 1;
-    console.log("NEXT PAGE = [" + nextP + "]");
+    // console.log("CURRENT PAGE = [" + page + "]");
+    // console.log("LAST PAGE = [" + Math.ceil(filteredData.length / ITEMS_PER_PAGE) + "]");
+    // let nextP = page + 1;
+    // console.log("NEXT PAGE = [" + nextP + "]");
 
 
     res.render('shop/product-list', {

@@ -212,6 +212,21 @@ button:active {
 }
 
 
+/* prove 10 */
+
+.jsonImg>img {
+    height: 100%;
+    width: auto;
+    padding-top: 100px;
+}
+
+.jsonImg {
+    height: 240px;
+    display: flex;
+    justify-content: center;
+}
+
+
 /*
 *
 * ==========================================
